@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.shiro.dao.UserDao">
+
+    <select id="get" parameterType="long" resultType="com.example.shiro.model.UserDO">
+        select id,username,password
+        from t_user
+        where id=#{userId}
+    </select>
+
+    <select id="queryUserByUserName" parameterType="string" resultType="com.example.shiro.model.UserDO">
+        select id,username,password
+        from t_user
+        where username=#{username}
+    </select>
+
+</mapper>
