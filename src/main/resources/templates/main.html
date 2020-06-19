@@ -13,17 +13,23 @@
     <div style="padding: 10px 0 20px 10px;">
         <h3>&nbsp;&nbsp;&nbsp;Shiro</h3>
         <ul shiro:hasPermission="sys:menu:add">
-            <li >管理员可见</li>
+            <li >该用户对于系统又增添按钮的权限</li>
         </ul>
         <h3 >&nbsp;&nbsp;&nbsp;</h3>
-        <ul shiro:hasPermission="sys:menu:show1">
-            <li>普通用户可见</li>
+        <ul shiro:hasPermission="sys:menu:show">
+            <li>该用户可以获取展示按钮的权限</li>
         </ul>
         <ul>
             <li><a href="https://github.com/liuiuh/shiro">查看github代码示例</a></li>
         </ul>
         <ul>
-            <li>无权限都可见</li>
+            <li shiro:hasRole="admin">admin角色都可见</li>
+        </ul>
+        <ul>
+            <li shiro:hasRole="user">user角色都可见</li>
+        </ul>
+        <ul>
+            <li>所有用户都可见</li>
         </ul>
         <ul>
             <li><a href="/logout">安全退出</a>

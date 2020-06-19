@@ -75,6 +75,8 @@ public class Test {
             //获取当前用户主体
             Subject subject= SecurityUtils.getSubject();
             subject.login(token);
+            //资源标识符：操作：资源实例标识符
+            subject.isPermitted("sys:menu:add");
             //判断当前用户的角色
             if(subject.hasRole("admin")){
                 System.out.println("这是一个管理员");
